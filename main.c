@@ -37,8 +37,8 @@ struct foo generateExample() {
   return player;
 }
 
-void modify(struct foo example, int new_a) {
-    example.a = new_a;
+void modify(struct foo *example, int new_a) {
+    (*example).a = new_a;
 }
 
 int main() {
@@ -61,7 +61,7 @@ int main() {
   player2.s = "Kareem Abdul Jabbar";
   printf("%s\n", outputStat(player2));
   printf("He then had a fantastic season with the Bucks! Now ...\n");
-  modify(player2, 30);
+  modify(&player2, 30);
   printf("%s\n", outputStat(player2));
 
 
